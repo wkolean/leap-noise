@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leap Noise | R/GA Group 5 Tech </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
+    <style>
+    
+    	h1 {
+    		padding: 0 1em;
+    	}
+    
+    	.box {
+    		width: 100%;
+    		height: 20em;
+    		background: #999 none;
+    		cursor: pointer;
+    	}
+    	
+    	.play {
+    		background: #cf0 none;
+    	}
+    	
+    	.stop {
+    		background: #600 none;
+    	}
+    </style>
+    
+  </head>
+  <body>
+    
+    
+    <h1>leap audio filters</h1>
+    <div class="box play" id="in"></div>
+    <div class="box" id="out"></div>
+    <div class="box play"></div>
+    <div class="box change-frequency"></div>
+    <div style="background-color:blue" class="box change-quality"></div>
+    <div class="box stop"></div>
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/leap.js"></script>
+    <script>
+          
+          
+    var pausedFrame = null;
+          var latestFrame = null,
+          context, soundSource, soundBuffer, 
+          url = '/audio/technotime.mp3',
+          filter = {},
+          freq = 0,
+          flag = 0;
+          qual = 0;
+          window.onkeypress = function(e) {
+            //space bar
+            if (e.charCode == 32) {
+              if (pausedFrame == null) {
+                pausedFrame = latestFrame;
+              } else {
+                pausedFrame = null;
+              }
+            }
+          };
+          
+          
+          var controller = new Leap.Controller({enableGestures: true});
+          controller.loop(function(frame) {
+            latestFrame = frame;
+
+            if (pausedFrame) {
+                $('#in').html('<p>Ok, I stopped, look below...</p>');
+                $('#out').html('<p>Pause!</p>' + pausedFrame.dump());
+                //console.log('Paused Frame Dump', pausedFrame.dump())
+
+            } else {
+                var hands = latestFrame.hands.length;
+                console.log(hands);
+                if (hands && !flag) {
+                    startSound();
+                    flag = 1;
+                    console.log('play')
+                    
+                    //changeQuality(latestFrame._translation[0]*-1)
+
+                } else if (!hands && flag) {
+                    stopSound();
+                    flag = 0;
+                    console.log('stopped');
+                }
+                console.log()
+                if(flag) {
+                    console.log(latestFrame._translation[1]);
+                   changeQuality((latestFrame._translation[0]*-1)*.0001);
+                   changeFrequency((latestFrame._translation[1]*-1)*.0001);
+                }
+                
+                //console.log(latestFrame._translation[0])
+                $('#out').html('<p>Playing above me</p>');
+                $('#in').html('<p>Play it!</p>' + latestFrame.dump());
+                //console.log('Latest Frame Dump',latestFrame)
+            }
+          });
+          
+          controller.on('ready', function() {
+              console.log("ready");
+          });
+          controller.on('connect', function() {
+              console.log("connect");
+          });
+          controller.on('disconnect', function() {
+              console.log("disconnect");
+          });
+          controller.on('focus', function() {
+              console.log("focus");
+          });
+          controller.on('blur', function() {
+              console.log("blur");
+          });
+          controller.on('deviceConnected', function() {
+              console.log("deviceConnected");
+          });
+          controller.on('deviceDisconnected', function() {
+              console.log("deviceDisconnected");
+          });
+
+    
+    // Step 1 - Initialise the Audio Context
+    // There can be only one!
+    function init() {
+        if (typeof AudioContext !== "undefined") {
+            context = new AudioContext();
+        } else if (typeof webkitAudioContext !== "undefined") {
+            context = new webkitAudioContext();
+        } else {
+            throw new Error('AudioContext not supported. :(');
+        }
+    }
+
+    // Step 2: Load our Sound using XHR
+    function startSound() {
+        // Note: this loads asynchronously
+        var request = new XMLHttpRequest();
+        request.open("GET", url, true);
+        request.responseType = "arraybuffer";
+
+        // Our asynchronous callback
+        request.onload = function() {
+            var audioData = request.response;
+            audioGraph(audioData);
+        };
+
+        request.send();
+    }
+
+    // Finally: tell the source when to start
+
+    function playSound() {
+        // play the source now
+        // noteOne is depecrated?!?
+        soundSource.noteOn(context.currentTime);
+    }
+
+    function stopSound() {
+        // stop the source now
+        soundSource.noteOff(context.currentTime);
+    }
+
+    function changeFrequency(value){
+        //console.log(filter.frequency.value)
+        var minValue = 40;
+        var maxValue = context.sampleRate / 2;
+        // Logarithm (base 2) to compute how many octaves fall in the range.
+        var numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
+        // Compute a multiplier from 0 to 1 based on an exponential scale.
+        var multiplier = Math.pow(2, numberOfOctaves * (value- 1.0));
+        // Get back to the frequency value between min and max.
+        filter.frequency.value = maxValue * multiplier;
+    }
+
+    function changeQuality(val){
+        //console.log(val)
+        //var rando = Math.random();
+        //console.log(filter)
+        filter.Q.value = val * 30;
+        //console.log(filter.Q.value)
+    }
+
+    // Events for the play/stop bottons
+    $('.play').click(startSound);
+    $('.stop').click(stopSound);
+    $('.change-frequency').click(changeFrequency);
+    $('.change-quality').click(changeQuality);
+
+    function audioGraph(audioData) {
+        soundSource = context.createBufferSource();
+        soundBuffer = context.createBuffer(audioData, true);
+        soundSource.buffer = soundBuffer;
+
+        filter = context.createBiquadFilter();
+        filter.type = 0; //lowpass
+        filter.frequency.value = 5000;
+        soundSource.connect(filter);
+        filter.connect(context.destination);
+
+        volumeNode = context.createGainNode();
+
+        //Set the volume
+        volumeNode.gain.value = 0.1;
+
+        // Wiring
+        soundSource.connect(volumeNode);
+        volumeNode.connect(context.destination);
+
+        // Finally
+        playSound(soundSource);
+    }
+
+
+    init();
+    </script>
+  </body>
+</html>
