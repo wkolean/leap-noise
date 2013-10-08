@@ -88,7 +88,6 @@
                     console.log('stopped');
                     flag = 0;
                 }
-                console.log()
                 if(flag) {
                   //console.log(latestFrame._translation[1]);
                   //console.log(latestFrame);
@@ -174,12 +173,10 @@
     function changeFrequency(value){
         //console.log(filter.frequency.value)
         //console.log((value*.1)/4000);
-        console.log(value)
         var minValue = 40;
         var maxValue = 4000;
         var multiplier = (-1*value)/maxValue;
         var frequencyCutOff =  maxValue * multiplier;
-        console.log(frequencyCutOff)
         //console.log(maxValue)
         // Logarithm (base 2) to compute how many octaves fall in the range.
         // Compute a multiplier from 0 to 1 based on an exponential scale.
@@ -190,7 +187,7 @@
         //console.log(maxValue * multiplier);
         // Get back to the frequency value between min and max.
         filter.frequency.value = maxValue * multiplier;
-        console.log(filter.frequency.value)
+        console.log('frequency value:',filter.frequency.value)
         //filter.frequency.value = (value/2)*.05;
     }
 
@@ -198,9 +195,8 @@
         //console.log(val)
         //var rando = Math.random();
         //console.log(filter)
-        console.log(val*.001)
         filter.Q.value = (1*val*.001) * 30;
-        //console.log(filter.Q.value)
+        console.log('Q.value:',filter.Q.value)
         //console.log(val*30);
         //console.log(filter.Q.value)
     }
