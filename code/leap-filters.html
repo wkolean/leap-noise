@@ -190,7 +190,7 @@
         //console.log(maxValue * multiplier);
         // Get back to the frequency value between min and max.
         filter.frequency.value = maxValue * multiplier;
-        console.log(filter.frequency.value)
+        //console.log(filter.frequency.value)
         //filter.frequency.value = (value/2)*.05;
     }
 
@@ -198,7 +198,9 @@
         //console.log(val)
         //var rando = Math.random();
         //console.log(filter)
-        //filter.Q.value = val * 30;
+        console.log(val*.001)
+        filter.Q.value = (val*.001) * 30;
+        //console.log(filter.Q.value)
         //console.log(val*30);
         //console.log(filter.Q.value)
     }
