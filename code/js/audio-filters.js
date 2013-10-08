@@ -1,7 +1,9 @@
 (function() {
     var context, soundSource, soundBuffer, 
-    url = '/audio/static_discharge_loop.mp3',
-    filter = {};
+    url = '/audio/technotime.mp3',
+    filter = {},
+    freq = 0,
+    qual = 0;
 
     
     // Step 1 - Initialise the Audio Context
@@ -52,15 +54,22 @@
         // Logarithm (base 2) to compute how many octaves fall in the range.
         var numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
         // Compute a multiplier from 0 to 1 based on an exponential scale.
-        var multiplier = Math.pow(2, numberOfOctaves * (Math.floor( Math.random() * 17 )- 1.0));
+        var multiplier = Math.pow(2, numberOfOctaves * (Math.random()- 1.0));
         // Get back to the frequency value between min and max.
         filter.frequency.value = maxValue * multiplier;
+    }
+
+    function changeQuality(){
+
+        filter.Q.value = Math.random() * 30;
+        console.log(filter.Q.value)
     }
 
     // Events for the play/stop bottons
     $('.play').click(startSound);
     $('.stop').click(stopSound);
     $('.change-frequency').click(changeFrequency);
+    $('.change-quality').click(changeQuality);
 
     function audioGraph(audioData) {
         soundSource = context.createBufferSource();
