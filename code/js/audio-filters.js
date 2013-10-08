@@ -1,7 +1,7 @@
 (function() {
     var context, soundSource, soundBuffer, 
     //url = 'http://thelab.thingsinjars.com/web-audio-tutorial/hello.mp3';
-    url = 'http://groovylab.com/leap-noise/code/audio/VCR.mp3';
+    url = '/audio/static_discharge_loop.mp3';
     
     // Step 1 - Initialise the Audio Context
     // There can be only one!

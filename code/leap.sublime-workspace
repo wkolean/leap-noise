@@ -1,0 +1,310 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"backgr",
+				"background-position"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"tag",
+				"Tag: Lint Selection or Document"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/video/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_buy/view.js",
+		"/Volumes/dev2/aarp/phase2/.gitignore",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_bonus-content/view.js",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/buy.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_bonus-content/view.css",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/_buybuttons.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/_events.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/common/common.css",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/bonus-content.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/controllers/BookController.php",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/controllers/StoriesController.php",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_index/_index/view.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_index/_index/view.js",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/index/index.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_common/common.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_buy/view.css",
+		"/Volumes/dev2/aarp/phase2/src/application/models/CmsBookEvents.php",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/_twitter.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/book/index.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/app.build.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_marketing/_page/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/first-time-slideshow/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_playbook/widgets-slider/view.html",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_marketing/_page/view.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_all/view.css",
+		"/Users/josephw/Desktop/wolffman.html",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_all/view.js",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/janepauley/details.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/stories/all.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_theme/view.html",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_details/view.html",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/controllers/MarketingController.php",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_theme/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/breadcrumb/view.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_theme/view.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_janepauley/_theme/view.css",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_janepauley/_theme/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_janepauley/_details/view.js",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_janepauley/_details/view.css",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/janepauley/index.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/janepauley/theme.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/stories/details.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/stories/theme.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/header/view.html",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_janepauley/_theme/view.html",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_stories/_all/view.html",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/marketing/grey.phtml",
+		"/Volumes/dev2/aarp/phase2/src/application/modules/app/views/scripts/marketing/career-change.phtml",
+		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/signup-form/view.js",
+		"/Volumes/dev2/aarp/__phase2/src/public/assets/app.module/_user/_social-sign-up/view.css",
+		"/Volumes/dev2/aarp/__phase2/src/public/assets/app.module/_user/_sign-up/view.css",
+		"/Users/josephw/Library/Application Support/Sublime Text 3/Packages/User/Package Control.system-ca-bundle",
+		"/Users/josephw/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/josephw/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/josephw/Library/Application Support/Sublime Text 3/Packages/PlasticCodeWrap.tmTheme"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Volumes/dev2/aarp/phase2"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"enableI",
+			"enableImageFlicker",
+			".slideshow .slider .slide .video ",
+			"videoPlay",
+			"playing",
+			"videoId",
+			"onPlayerReady",
+			"getC",
+			"590px",
+			"600px",
+			"50%",
+			".book-shared.app-book-bonus-content .bottom .col-b",
+			"goToBook",
+			"margin-bottom: 18",
+			".book-shared h3 ",
+			"flex",
+			".book-shared.app-book-bonus-content .item p",
+			"about",
+			".book-shared .bottom:",
+			".book-shared .bottom",
+			"/assets/app.module/_book/_buy/images/calendar.png",
+			".book-shared.app-book-bonus-content .col-b img",
+			"/assets/app.module/_book/_buy/",
+			"/assets/app.module/_book/_buy/i",
+			"/assets/app.module/_book/",
+			"./",
+			":before",
+			"bonus-con",
+			"discover",
+			".app-book-buy",
+			"slider",
+			"flexslider",
+			"30px",
+			"col-a",
+			"author",
+			":after",
+			"border",
+			"arrow",
+			"color: #2f1b42;",
+			"15px",
+			"buy-now",
+			"5",
+			"span",
+			"<h4>Tagged with</h4>",
+			"filter",
+			"css!app.module/main/breadcrumb/view.css",
+			"bread",
+			"css",
+			"bread",
+			".breadcrumb ",
+			".breadcrumb .selected a ",
+			"images/backarrow.png",
+			"url('images/backarrow.png') ",
+			"\"",
+			"Brasky",
+			"Bill",
+			"Bill Brasky",
+			"class=\"btn btn-life-reimagined stories\"",
+			"Theme of the month",
+			".breadcrumb a",
+			"enable",
+			".marketing-page-details.tmp2 .footer li",
+			".marketing-page-details.tmp2 .footer",
+			".marketing-page-details.tmp2 .view.signup-form .bbf-field.field-month",
+			".marketing-page-details.tmp2 .view.signup-form .bbf-field.field-year",
+			".marketing-page-details.tmp2 .view.signup-form .bbf-field.field-month"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/assets/app.module/_book/_common/",
+			"/assets/app.module/_common/",
+			"/assets/app.module/_common/images/",
+			"/assets/app.module/_common/_buy/",
+			".book-shared",
+			"",
+			"Purzycki",
+			"Mark Purzycki"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "leap.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 483.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
