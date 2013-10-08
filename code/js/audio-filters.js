@@ -1,7 +1,8 @@
 (function() {
     var context, soundSource, soundBuffer, 
-    //url = 'http://thelab.thingsinjars.com/web-audio-tutorial/hello.mp3';
-    url = '/audio/static_discharge_loop.mp3';
+    url = '/audio/static_discharge_loop.mp3',
+    filter = {};
+
     
     // Step 1 - Initialise the Audio Context
     // There can be only one!
@@ -44,14 +45,33 @@
         soundSource.noteOff(context.currentTime);
     }
 
+    function changeFrequency(){
+        console.log(filter.frequency.value)
+        var minValue = 40;
+        var maxValue = context.sampleRate / 2;
+        // Logarithm (base 2) to compute how many octaves fall in the range.
+        var numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
+        // Compute a multiplier from 0 to 1 based on an exponential scale.
+        var multiplier = Math.pow(2, numberOfOctaves * (Math.floor( Math.random() * 17 )- 1.0));
+        // Get back to the frequency value between min and max.
+        filter.frequency.value = maxValue * multiplier;
+    }
+
     // Events for the play/stop bottons
     $('.play').click(startSound);
     $('.stop').click(stopSound);
+    $('.change-frequency').click(changeFrequency);
 
     function audioGraph(audioData) {
         soundSource = context.createBufferSource();
         soundBuffer = context.createBuffer(audioData, true);
         soundSource.buffer = soundBuffer;
+
+        filter = context.createBiquadFilter();
+        filter.type = 0; //lowpass
+        filter.frequency.value = 5000;
+        soundSource.connect(filter);
+        filter.connect(context.destination);
 
         volumeNode = context.createGainNode();
 
