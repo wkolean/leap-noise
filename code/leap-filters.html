@@ -33,8 +33,6 @@
     
     
     <h1>leap audio filters</h1>
-    <div class="box play" id="in"></div>
-    <div class="box" id="out"></div>
     <div class="box play"></div>
     <div class="box change-frequency"></div>
     <div style="background-color:blue" class="box change-quality"></div>
@@ -46,9 +44,9 @@
     <script>
           
           
-    var pausedFrame = null;
-          var latestFrame = null,
-          context, soundSource, soundBuffer, 
+    var pausedFrame = null,
+    latestFrame = null,
+    context, soundSource, soundBuffer, 
           url = '/audio/technotime.mp3',
           filter = {},
           freq = 0,
@@ -71,35 +69,38 @@
             latestFrame = frame;
 
             if (pausedFrame) {
-                $('#in').html('<p>Ok, I stopped, look below...</p>');
-                $('#out').html('<p>Pause!</p>' + pausedFrame.dump());
+                //$('#in').html('<p>Ok, I stopped, look below...</p>');
+                //$('#out').html('<p>Pause!</p>' + pausedFrame.dump());
                 //console.log('Paused Frame Dump', pausedFrame.dump())
 
             } else {
                 var hands = latestFrame.hands.length;
-                console.log(hands);
+                //console.log(hands);
                 if (hands && !flag) {
                     startSound();
-                    flag = 1;
                     console.log('play')
+                    flag = 1;
                     
                     //changeQuality(latestFrame._translation[0]*-1)
 
                 } else if (!hands && flag) {
                     stopSound();
-                    flag = 0;
                     console.log('stopped');
+                    flag = 0;
                 }
                 console.log()
                 if(flag) {
-                    console.log(latestFrame._translation[1]);
-                   changeQuality((latestFrame._translation[0]*-1)*.0001);
-                   changeFrequency((latestFrame._translation[1]*-1)*.0001);
+                  //console.log(latestFrame._translation[1]);
+                  //console.log(latestFrame);
+                  //console.log(latestFrame.data.hands[0].palmPosition);
+                  //console.log(latestFrame.data.hands[0].palmNormal);
+                   changeQuality(latestFrame.data.hands[0].palmPosition[1]);
+                   changeFrequency(latestFrame.data.hands[0].palmPosition[0]);
                 }
                 
                 //console.log(latestFrame._translation[0])
-                $('#out').html('<p>Playing above me</p>');
-                $('#in').html('<p>Play it!</p>' + latestFrame.dump());
+                //$('#out').html('<p>Playing above me</p>');
+                //$('#in').html('<p>Play it!</p>' + latestFrame.dump());
                 //console.log('Latest Frame Dump',latestFrame)
             }
           });
@@ -161,30 +162,44 @@
         // play the source now
         // noteOne is depecrated?!?
         soundSource.noteOn(context.currentTime);
+        flag = 1;
     }
 
     function stopSound() {
         // stop the source now
         soundSource.noteOff(context.currentTime);
+        flag = 0;
     }
 
     function changeFrequency(value){
         //console.log(filter.frequency.value)
+        //console.log((value*.1)/4000);
+        console.log(value)
         var minValue = 40;
-        var maxValue = context.sampleRate / 2;
+        var maxValue = 4000;
+        var multiplier = (value)/maxValue;
+        var frequencyCutOff =  maxValue * multiplier;
+        console.log(frequencyCutOff)
+        //console.log(maxValue)
         // Logarithm (base 2) to compute how many octaves fall in the range.
-        var numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
         // Compute a multiplier from 0 to 1 based on an exponential scale.
-        var multiplier = Math.pow(2, numberOfOctaves * (value- 1.0));
+        //var multiplier = Math.pow(2, numberOfOctaves * ((value*.1)/4000- 1.0));
+        
+        //console.log(multiplier)
+        //var multiplier = .005;
+        //console.log(maxValue * multiplier);
         // Get back to the frequency value between min and max.
         filter.frequency.value = maxValue * multiplier;
+        console.log(filter.frequency.value)
+        //filter.frequency.value = (value/2)*.05;
     }
 
     function changeQuality(val){
         //console.log(val)
         //var rando = Math.random();
         //console.log(filter)
-        filter.Q.value = val * 30;
+        //filter.Q.value = val * 30;
+        //console.log(val*30);
         //console.log(filter.Q.value)
     }
 

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"change",
+				"changeFrequency"
+			],
+			[
+				"chan",
+				"changeFrequency"
+			],
+			[
 				"font",
 				"font-size"
 			],
@@ -23,6 +31,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2836,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "audio-filters.html",
+			"settings":
+			{
+				"buffer_size": 1072,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "leap-play-2.html",
+			"settings":
+			{
+				"buffer_size": 4108,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "leap-filters.html",
+			"settings":
+			{
+				"buffer_size": 6711,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "leap-dumper.html",
+			"settings":
+			{
+				"buffer_size": 2489,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -64,6 +112,8 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/code/js/audio-filters.js",
+		"/Applications/MAMP/htdocs/code/js/leap-audio-filters.js",
 		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/main/video/view.js",
 		"/Volumes/dev2/aarp/phase2/src/public/assets/app.module/_book/_buy/view.js",
 		"/Volumes/dev2/aarp/phase2/.gitignore",
@@ -138,6 +188,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
+			"changeQuality",
+			"console",
+			"flag",
+			"paused f",
+			"element",
+			"FilterSample",
+			"playSound",
 			"enableI",
 			"enableImageFlicker",
 			".slideshow .slider .slide .video ",
@@ -229,8 +287,159 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1414,
+								1414
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 364.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "audio-filters.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "leap-play-2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1974,
+								1941
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 844.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "leap-filters.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1210,
+								1210
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 379.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "leap-dumper.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1043,
+								2452
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 829.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -302,7 +511,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 483.0,
+	"side_bar_width": 175.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
